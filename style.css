@@ -1,0 +1,60 @@
+#stockIndicator {
+    text-align:left;
+    padding: 10px;
+    margin: 5px;
+    color: red;
+  }
+  
+  .ajaxtrigger:hover {
+    cursor: pointer;
+    cursor: hand;
+  }
+  
+  #stock_miniQuote_head {
+    background-color:#464A55;
+    color:#FFFFFF;
+    font-size:14px;
+    font-weight:bold;
+    padding-bottom:10px;
+    padding-left:10px;
+    padding-right:10px;
+    padding-top:10px;
+  }
+  
+  #stock_miniQuote {
+    margin-bottom:10px;
+    padding-top:10px;
+    vertical-align:text-top;
+    height: 10%;
+    width: 99%;
+  }
+  
+  
+  #stock_left {
+    float:left; border-right:1px solid #B2B0AD; padding:0 15px;
+  }
+  
+  #stock_right {
+    float:right; width:10px; 
+    padding:0 20px; 
+  }
+  
+  .stock_label {
+    font-size:14px;
+  }
+  
+  .stock_strong {
+    font-size:17px;
+  }
+  
+  
+  #stock_body_content {
+    float:left; width:40px; padding:0 15px; height: 10px;
+  }
+
+  footer {
+    background-color: #558;
+    color: white;
+    padding: 15px;
+    margin-top: 420px;
+  }

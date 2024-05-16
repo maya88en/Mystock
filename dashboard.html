@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Stock Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"> -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+        integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+</head>
+
+
+
+<body style="color:grey; background-color: rgb(21, 21, 21);">
+    <header>
+        <div class="container page-header">
+            <nav class="navbar navbar-inverse navbar-fixed-top">
+                <div class="container-fluid">
+                    <div class="navbar-header">
+                        <a class="navbar-brand" href="./index.html"> Dashboard
+
+                        </a>
+                    </div>
+                    <ul class="nav navbar-nav">
+                        <li class="active"><a href="./index.html">Home</a></li>
+                    </ul>
+                    <ul class="nav navbar-nav navbar-right">
+                        
+                        <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> LogedIn</a></li>
+                    </ul>
+                </div>
+            </nav>
+            <br>
+
+        </div>
+    </header>
+
+    <div class="container-fluid ">
+        <div class="row dashboard">
+            <div class="col-sm-4">
+                <div class="text-center">
+
+                    <svg width="100%" height="150" xmlns="http://www.w3.org/2000/svg">
+                        <rect x="45" y="25" width="70" height="45" style="stroke:green;fill:grey; stroke-width:2">
+                            <animateMotion path="M0,0 q60,100 100,0 q60,-20 100,0" begin="0s" dur="10s"
+                                repeatCount="indefinite" />
+                        </rect>
+                        <text x="50" y="50" style="font-family:Verdana;font-size:32;">
+                            <a href="#event" style="font-weight: bold;" class="btn" data-toggle="collapse">
+                                STOCKS
+                            </a>
+                            <animateMotion path="M0,0 q60,100 100,0 q60,-20 100,0" begin="0s" dur="10s"
+                                repeatCount="indefinite" />
+                        </text>
+                        Sorry, your browser does not support inline SVG.
+                    </svg>
+
+                    <a href="#event" style="color:grey; font-weight: bolder;" class="btn"
+                        data-toggle="collapse">Trade View</a>
+                    <div id="event" class="collapse">
+
+                        <a data-toggle="collapse" href="#collapse1"></a>
+
+                        <div class="tradingview-widget-container" style="height:100%;width:100%">
+                            <div class="tradingview-widget-container__widget" style="height:calc(100% - 32px);width:100%"></div>
+                            
+                            <script  
+                            src="https://s3.tradingview.com/external-embedding/embed-widget-advanced-chart.js" async> 
+                            </script>
+                            <script type="text/javascript">
+                                new TradingView.widget({
+                            autosize: false,
+                            symbol: "NASDAQ:AAPL",
+                            interval: "D",
+                            timezone: "Etc/UTC",
+                            theme: "dark",
+                            "watchlist": [
+                            "NASDAQ:MSFT",
+                            "MYX:AMAZON-C3",
+                            "NASDAQ:AAPL"
+                            ],
+                            style: "1",
+                            locale: "en",
+                            allow_symbol_change: true,
+                            calendar: false,
+                            support_host: "https://www.tradingview.com"
+                          });
+                            </script>
+                          </div>
+                         
+
+                    </div>
+
+                    <a href="#five" class="btn" data-toggle="collapse">My Watchlist</a>
+                    <div id="five" class="collapse">
+
+                        <a data-toggle="collapse" href="#collapse2">See the top five gaining, losing, and most active stocks for the day. It updates based on current market activity – so you'll always see the most relevant stocks.</a>
+
+                        
+                        <div class="tradingview-widget-container">
+                            <div class="tradingview-widget-container__widget"></div>
+                            
+                            <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-hotlists.js" async>
+                            {
+                            "colorTheme": "dark",
+                            "dateRange": "12M",
+                            "exchange": "US",
+                            "showChart": true,
+                            "locale": "en",
+                            "largeChartUrl": "",
+                            "isTransparent": false,
+                            "showSymbolLogo": false,
+                            "showFloatingTooltip": false,
+                            "width": "400",
+                            "height": "550",
+                            "plotLineColorGrowing": "rgba(41, 98, 255, 1)",
+                            "plotLineColorFalling": "rgba(41, 98, 255, 1)",
+                            "gridLineColor": "rgba(240, 243, 250, 0)",
+                            "scaleFontColor": "rgba(209, 212, 220, 1)",
+                            "belowLineFillColorGrowing": "rgba(41, 98, 255, 0.12)",
+                            "belowLineFillColorFalling": "rgba(41, 98, 255, 0.12)",
+                            "belowLineFillColorGrowingBottom": "rgba(41, 98, 255, 0)",
+                            "belowLineFillColorFallingBottom": "rgba(41, 98, 255, 0)",
+                            "symbolActiveColor": "rgba(41, 98, 255, 0.12)"
+                        }
+                            </script>
+                        </div>
+                        
+
+                    </div>
+
+
+                    <a href="#alpha" class="btn" data-toggle="collapse">Intraday (5min)</a>
+                    <div id="alpha" class="collapse">
+
+                        <a data-toggle="collapse" href="#collapse4">Latest Sock Price as returned by the TIME_SERIES_INTRADAY</a>
+                        <div id="collapse4" class="collapse">
+                        <</div>
+
+                        <div id="stock_miniQuote_head" class="ajaxtrigger"><span id="stockSymbol"></span>&nbsp;</div>
+
+                        <div id="stock_miniQuote">
+                        <div id="stockIndicator"><p>Retrieving stock information...</p></div>
+                        <div class="stock_divider">
+                        <div id="stock_left">
+                            <span class="stock_label">Price</span><br/>
+                            <strong class="stock_strong">$<span id="stockAsk"></span></strong><br/>
+                        </div>
+                        </div>
+                        <div id="stock_body">
+                        <div id="stock_body_content">
+                            <span class="stock_label">Volume</span><br/>
+                            <strong class="stock_strong"><span id="stockVolume"></span></strong>
+                        </div>
+                        </div>
+                    </div>
+                    <script>
+                        var theURL = "https://www.alphavantage.co/query?function=TIME_SERIES_INTRADAY&symbol=IBM&interval=5min&apikey=demo";
+                        
+                        $(document).ready(function() {
+                          $("#stockIndicator").show();
+                          doAjax(theURL);
+                        
+                          $('.ajaxtrigger').click(function() {
+                            $("#stockIndicator").show();
+                            doAjax(theURL);
+                            return false;
+                          });
+                        
+                          function numberWithCommas(x) {
+                            return x.toString().replace(/\B(?=(?:\d{3})+(?!\d))/g, ",");
+                          }
+                        
+                          function doAjax(url) {
+                            $.ajax({
+                              url: url,
+                              dataType: 'json',
+                              contentType: "application/json",
+                              success: function(data) {
+                        
+                                var symbol = data['Meta Data']['2. Symbol']
+                                var lastRefreshed = data['Meta Data']['3. Last Refreshed']
+                                var lastTradePriceOnly = data['Time Series (5min)'][lastRefreshed]['4. close']
+                                var lastVolume = data['Time Series (5min)'][lastRefreshed]['5. volume']
+                        
+                                $('#stockSymbol').html(symbol);
+                                $('#stockAsk').html(lastTradePriceOnly);
+                                $('#stockVolume').html(numberWithCommas(lastVolume));
+                                $("#stockIndicator").hide();
+                              }
+                            });
+                          }
+                        });
+                        </script>
+
+                    </div>
+
+                    <svg width="100%" height="150" xmlns="http://www.w3.org/2000/svg">
+                        <rect x="45" y="18" width="150" height="45" style="stroke:green;fill:grey; stroke-width:2">
+                            <animateMotion path="M0,0 q60,100 100,0 q60,-20 100,0" begin="0s" dur="10s"
+                                repeatCount="indefinite" />
+                        </rect>
+                        <text x="50" y="50" style="font-family:Verdana;font-size:20; font-weight:bold">
+                            <a href="#ticker1" style="font-weight: bold;" class="btn" data-toggle="collapse"> Single Ticker Tape
+                               </a>
+                            <animateMotion path="M0,0 q60,100 100,0 q60,-20 100,0" begin="0s" dur="10s"
+                                repeatCount="indefinite" />
+                        </text>
+                        Sorry, your browser does not support inline SVG.
+                    </svg>
+
+                    
+
+                    <a href="#ticker1" class="btn" data-toggle="collapse">Single Ticker Tape</a>
+                    <div id="ticker1">
+                        <div class="tradingview-widget-container">
+                            <div class="tradingview-widget-container__widget"></div>
+                            <div class="tradingview-widget-copyright"><a href="#" rel="noopener nofollow" target="_blank"></a></div>
+                            <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-single-quote.js" async>
+                            {
+                            "symbol": "FX:EURUSD",
+                            "width": 350,
+                            "isTransparent": false,
+                            "colorTheme": "dark",
+                            "locale": "en"
+                        }
+                            </script>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="col-sm-4">
+                <svg width="100%" height="150" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="44" y="25" width="100" height="40" style="stroke:green;fill:grey; stroke-width:2">
+                        <animateMotion path="M0,0 q60,100 100,0 q60,-20 100,0" begin="0s" dur="10s"
+                            repeatCount="indefinite" />
+                    </rect>
+                    <text x="50" y="50" style="font-family:Verdana;font-size:32;">
+                        <a href="#ticker" style="font-weight: bold;" class="btn" data-toggle="collapse">
+                            Ticker Tape
+                        </a>
+                        <animateMotion path="M0,0 q60,100 100,0 q60,-20 100,0" begin="0s" dur="10s"
+                            repeatCount="indefinite" />
+                    </text>
+                    Sorry, your browser does not support inline SVG.
+                </svg>
+                        <a href="#ticker" class="btn" data-toggle="collapse">Ticker Tape</a> 
+                        <div id="ticker">
+
+                            <div class="tradingview-widget-container">
+                                <div class="tradingview-widget-container__widget"></div>
+                                <div class="tradingview-widget-copyright"><a href="#" rel="noopener nofollow" target="_blank"></div>
+                                <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-ticker-tape.js" async>
+                                {
+                                "symbols": [
+                                {
+                                    "proName": "FOREXCOM:SPXUSD",
+                                    "title": "S&P 500 Index"
+                                },
+                                {
+                                    "proName": "FOREXCOM:NSXUSD",
+                                    "title": "US 100 Cash CFD"
+                                },
+                                {
+                                    "proName": "FX_IDC:EURUSD",
+                                    "title": "EUR to USD"
+                                },
+                                {
+                                    "proName": "BITSTAMP:BTCUSD",
+                                    "title": "Bitcoin"
+                                },
+                                {
+                                    "proName": "BITSTAMP:ETHUSD",
+                                    "title": "Ethereum"
+                                }
+                                ],
+                                "showSymbolLogo": true,
+                                "isTransparent": false,
+                                "displayMode": "adaptive",
+                                "colorTheme": "dark",
+                                "locale": "en"
+                            }
+                                </script>
+                            </div>
+                        </div>
+                
+
+            </div>
+
+            <div class="col-sm-4">
+                <div class="text-center">
+                    <svg width="100%" height="100" xmlns="http://www.w3.org/2000/svg">
+                        <a href="./dashboard.html" target="_blank">
+                            <circle cx="50" cy="50" r="50" style="fill:red;">
+                                <animate attributeName="cx" begin="0s" dur="10s" from="50" to="100%" repeatCount="indefinite" />
+                            </circle>
+                        </a>
+            
+                        <text x="30" y="60" style="font-family:Verdana;font-size:13; font-weight:bold">Dashboard
+                            <animateMotion path="M0,0 q60,100 100,0 q60,-20 200,0" begin="0s" dur="10s" repeatCount="indefinite" />
+                        </text>
+                        Sorry, your browser does not support inline SVG.
+                    </svg>
+                    <a href="#me" class="btn btn-block" data-toggle="collapse">My Profile</a>
+                    <div id="me">
+                        <h1>Welcome Walt to Your Stock Dashboard</h1>
+                        <img src="./Walt_Disney_1946.JPG" alt="My Photo" height="100px" width="100px">
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+
+
+        <footer class="text-center">
+            <p>
+               Stock Dashboard
+            </p>
+        </footer>
+
+
+</body>
+
+
+</html>
